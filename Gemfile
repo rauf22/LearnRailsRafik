@@ -14,10 +14,14 @@ gem 'rails', '~> 5.1.6'
 # sqlite3 for development and test database
 gem 'sqlite3', group: [:development, :test]
 
-# 12 factor for heroku
-gem 'rails_12factor', group: :production
-# postgres for production database
-gem 'pg', group: :production
+group :production do
+  # postgres for production database
+  gem 'pg'
+  # 12 factor for heroku
+  gem 'rails_12factor'
+end
+
+gem 'bootstrap-sass'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
